@@ -1,9 +1,0 @@
-initialised repository 
-.gitkeep file can be creaqted to keep track of empty file / folder 
-by git 
-nodemon : used to avoid each time restarting server on changes 
-it will do this for us 
-
-command used : npm install --save-dev nodemon 
-so that it doesnt have any effect on production grade its dev dependency 
-A dev dependency, or development dependency, is a package that's only required for development and testing. Dev dependencies are not required for an application to run in production. 
