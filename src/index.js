@@ -1,6 +1,7 @@
 //require('dotenv').config({path : './env'}) to keep consistent use import 
 
 import dotenv from "dotenv"
+import {app} from './app.js'
 
 dotenv.config({
     path : './env'
