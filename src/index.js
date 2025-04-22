@@ -4,7 +4,7 @@ import dotenv from "dotenv"
 import {app} from './app.js'
 
 dotenv.config({
-    path : './env'
+    path : './.env'
 })
 
 import mongoose from "mongoose" 
@@ -20,9 +20,13 @@ connectDB()
         }`);
         
     })
+
+    
+
+    
 })
 .catch((err) => {
-    console.log("MOGO DB CONNECTION FAILED " , err);
+    console.log("MONGO DB CONNECTION FAILED " , err);
     
 })
 
