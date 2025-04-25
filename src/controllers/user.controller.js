@@ -288,11 +288,11 @@ const changeCurrentPassword = asynchandlers(async (req , res) =>{
     const {oldPassword , newPassword} = req.body 
 
     const user = await User.findById(req.user?._id) 
-    const isPasswordCorrect = user.isPasswordCorrect(oldPassword)
+
+    const isPasswordCorrect = user.isPasswordCorrect(oldPassword , newPassword)
 
     if(!isPasswordCorrect){
         throw new Apierror(400 , "old password not correct ")
-
     }
 
     user.password = newPassword 
@@ -494,7 +494,7 @@ const getUserChannelProfile = asynchandlers(async(req , res) =>{
 const getWatchHistory = asynchandlers(async(req , res) =>{
      const user = await User.aggregate([
         {
-            $match : {
+             $match : {
                 _id : new mongoose.Types.ObjectId(req.user._id)
             }
         },{
